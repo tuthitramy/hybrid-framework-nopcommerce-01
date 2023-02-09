@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 
 import commons.BaseTest;
 import pageObjects.HomePageObject;
+import pageObjects.PageGeneratorManager;
 import pageObjects.RegisterPageObject;
 
 import java.util.Random;
@@ -12,6 +13,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
 public class Level_06_Page_Generator_Manager_03 extends BaseTest {
@@ -29,8 +31,8 @@ public class Level_06_Page_Generator_Manager_03 extends BaseTest {
 	@BeforeClass
 	public void beforeClass(String browserName) {
 		driver = getBrowserDriver(browserName);
-		homePage = new HomePageObject(driver);
-		registerPage = new RegisterPageObject(driver);
+		homePage = PageGeneratorManager.getHomePage(driver);
+//		registerPage = PageGeneratorManager.getRegisterPage(driver);
 		rand = new Random();
 		randEmail = "automationfc" + rand.nextInt(100) + "@gmail.com";
 		password = "123456";
@@ -38,7 +40,8 @@ public class Level_06_Page_Generator_Manager_03 extends BaseTest {
 
 	@Test
 	public void Register_01_Empty_Data() {
-		homePage.clickToRegisterLink();
+		registerPage = homePage.clickToRegisterLink();
+//		registerPage= new RegisterPageObject(driver);
 		registerPage.clickToRegisterButton();
 		Assert.assertEquals(registerPage.getErrorMesssageAtFirstNameTextbox(), "First name is required.");
 		Assert.assertEquals(registerPage.getErrorMesssageAtLastNameTextbox(), "Last name is required.");
@@ -48,9 +51,9 @@ public class Level_06_Page_Generator_Manager_03 extends BaseTest {
 
 	}
 
-	@Test
+	@Test(enabled = true)
 	public void Register_02_Invalid_Email() {
-		homePage.clickToRegisterLink();
+		registerPage = homePage.clickToRegisterLink();
 		registerPage.inputToFirstNameTextbox(firstName);
 		registerPage.inputToLastNameTextbox(lastName);
 		registerPage.inputToEmailTextbox("gts");
@@ -60,9 +63,9 @@ public class Level_06_Page_Generator_Manager_03 extends BaseTest {
 		Assert.assertEquals(registerPage.getErrorMesssageAtEmailTextbox(), "Wrong email");
 	}
 
-	@Test
+	@Test(enabled = true)
 	public void Register_03_Register_Success() {
-		homePage.clickToRegisterLink();
+		registerPage = homePage.clickToRegisterLink();
 		registerPage.inputToFirstNameTextbox(firstName);
 		registerPage.inputToLastNameTextbox(lastName);
 		registerPage.inputToEmailTextbox(randEmail);
@@ -72,9 +75,9 @@ public class Level_06_Page_Generator_Manager_03 extends BaseTest {
 		Assert.assertEquals(registerPage.getRegisterSuccessMessage(), "Your registration completed");
 	}
 
-	@Test
+	@Test(enabled = true)
 	public void Register_04_Existing_Email() {
-		homePage.clickToRegisterLink();
+		registerPage = homePage.clickToRegisterLink();
 		registerPage.inputToFirstNameTextbox(firstName);
 		registerPage.inputToLastNameTextbox(lastName);
 		registerPage.inputToEmailTextbox("automationfc.vn@gmail.com");
@@ -84,9 +87,9 @@ public class Level_06_Page_Generator_Manager_03 extends BaseTest {
 		Assert.assertEquals(registerPage.getExistingEmailErrorMessage(), "The specified email already exists");
 	}
 
-	@Test
+	@Test(enabled = true)
 	public void Register_05_Password_Less_Than_6_Chars() {
-		homePage.clickToRegisterLink();
+		registerPage = homePage.clickToRegisterLink();
 		registerPage.inputToFirstNameTextbox(firstName);
 		registerPage.inputToLastNameTextbox(lastName);
 		registerPage.inputToEmailTextbox("automationfc.vn@gmail.com");
@@ -97,9 +100,9 @@ public class Level_06_Page_Generator_Manager_03 extends BaseTest {
 
 	}
 
-	@Test
+	@Test(enabled = true)
 	public void Register_06_Confirm_Password_Not_Match() {
-		homePage.clickToRegisterLink();
+		registerPage = homePage.clickToRegisterLink();
 		registerPage.inputToFirstNameTextbox(firstName);
 		registerPage.inputToLastNameTextbox(lastName);
 		registerPage.inputToEmailTextbox("automationfc.vn@gmail.com");

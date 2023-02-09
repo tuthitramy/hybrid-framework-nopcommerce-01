@@ -31,14 +31,14 @@ public class LoginPageObject extends BasePage {
 	public void inputToEmailTextbox(String string) {
 		// TODO Auto-generated method stub
 		waitForElementVisible(driver, LoginPageUI.EMAIL_TEXTBOX);
-		senkeysToElement(driver, LoginPageUI.EMAIL_TEXTBOX, string);
+		sendkeysToElement(driver, LoginPageUI.EMAIL_TEXTBOX, string);
 
 	}
 
 	public void inputToPasswordTextbox(String string) {
 		// TODO Auto-generated method stub
 		waitForElementVisible(driver, LoginPageUI.PASSWORD_TEXTBOX);
-		senkeysToElement(driver, LoginPageUI.PASSWORD_TEXTBOX, string);
+		sendkeysToElement(driver, LoginPageUI.PASSWORD_TEXTBOX, string);
 
 	}
 

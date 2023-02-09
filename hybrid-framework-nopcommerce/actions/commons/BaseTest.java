@@ -1,15 +1,11 @@
 package commons;
 
-import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
-import pageObjects.HomePageObject;
-import pageObjects.RegisterPageObject;
 
 public class BaseTest {
 	public WebDriver driver;
@@ -18,18 +14,18 @@ public class BaseTest {
 	protected WebDriver getBrowserDriver(String browserName) {
 		switch (browserName) {
 		case ("chrome"):
-			System.setProperty("webdriver.chrome.driver", projectPath + "\\browserDrivers\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", projectPath + "\\browserDriver_main\\chromedriver.exe");
 			driver = new ChromeDriver();
 
 			break;
 		case ("firefox"):
-			System.setProperty("webdriver.gecko.driver", projectPath + "\\browserDrivers\\geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver", projectPath + "\\browserDriver_main\\geckodriver.exe");
 			driver = new FirefoxDriver();
 
 			break;
 
 		case ("edge"):
-			System.setProperty("webdriver.edge.driver", projectPath + "\\browserDrivers\\msedgedriver.exe");
+			System.setProperty("webdriver.edge.driver", projectPath + "\\browserDriver_main\\msedgedriver.exe");
 			driver = new EdgeDriver();
 
 			break;

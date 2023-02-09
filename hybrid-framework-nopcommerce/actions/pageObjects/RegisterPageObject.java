@@ -3,6 +3,7 @@ package pageObjects;
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
+import pageUIs.HomePageUI;
 import pageUIs.RegisterPageUI;
 
 public class RegisterPageObject extends BasePage {
@@ -39,48 +40,53 @@ public class RegisterPageObject extends BasePage {
 		return getTextElement(driver, RegisterPageUI.PASSWORD_ERROR_MESSAGE);
 
 	}
+
 	public String getErrorMesssageAtEmailTextbox() {
 		// TODO Auto-generated method stub
 		waitForElementVisible(driver, RegisterPageUI.EMAIL_ERROR_MESSAGE);
 		return getTextElement(driver, RegisterPageUI.EMAIL_ERROR_MESSAGE);
 
 	}
+
 	public String getErrorMesssageAtConfirmPasswordTextbox() {
 		// TODO Auto-generated method stub
 		waitForElementVisible(driver, RegisterPageUI.CONFIRM_PASSWORD_ERROR_MESSAGE);
 		return getTextElement(driver, RegisterPageUI.CONFIRM_PASSWORD_ERROR_MESSAGE);
 
 	}
+
 	public void inputToFirstNameTextbox(String string) {
 		// TODO Auto-generated method stub
 		waitForElementVisible(driver, RegisterPageUI.FIRST_NAME_TEXTBOX);
-		senkeysToElement(driver, RegisterPageUI.FIRST_NAME_TEXTBOX, string);}
-		
+		sendkeysToElement(driver, RegisterPageUI.FIRST_NAME_TEXTBOX, string);
+	}
 
 	public void inputToLastNameTextbox(String string) {
 		// TODO Auto-generated method stub
 		waitForElementVisible(driver, RegisterPageUI.LAST_NAME_TEXTBOX);
-		senkeysToElement(driver, RegisterPageUI.LAST_NAME_TEXTBOX, string);
-		
+		sendkeysToElement(driver, RegisterPageUI.LAST_NAME_TEXTBOX, string);
+
 	}
+
 	public void inputToEmailTextbox(String string) {
 		// TODO Auto-generated method stub
 		waitForElementVisible(driver, RegisterPageUI.EMAIL_TEXTBOX);
-		senkeysToElement(driver, RegisterPageUI.EMAIL_TEXTBOX, string);
-		
+		sendkeysToElement(driver, RegisterPageUI.EMAIL_TEXTBOX, string);
+
 	}
+
 	public void inputToPasswordTextbox(String string) {
 		// TODO Auto-generated method stub
 		waitForElementVisible(driver, RegisterPageUI.PASSWORD_TEXTBOX);
-		senkeysToElement(driver, RegisterPageUI.PASSWORD_TEXTBOX, string);
-		
+		sendkeysToElement(driver, RegisterPageUI.PASSWORD_TEXTBOX, string);
+
 	}
 
 	public void inputToConfirmPasswordTextbox(String string) {
 		// TODO Auto-generated method stub
 		waitForElementVisible(driver, RegisterPageUI.CONFIRM_PASSWORD_TEXTBOX);
-		senkeysToElement(driver, RegisterPageUI.CONFIRM_PASSWORD_TEXTBOX, string);
-		
+		sendkeysToElement(driver, RegisterPageUI.CONFIRM_PASSWORD_TEXTBOX, string);
+
 	}
 
 	public String getRegisterSuccessMessage() {
@@ -95,6 +101,11 @@ public class RegisterPageObject extends BasePage {
 		return getTextElement(driver, RegisterPageUI.EXISTING_MAIL_ERROR_MESSAGE);
 	}
 
-
+	public MyAccountPageObject clickToMyAccountLink() {
+		// TODO Auto-generated method stub
+		waitForElementClickable(driver, RegisterPageUI.MY_ACCOUNT_BUTTON);
+		clickToElement(driver, RegisterPageUI.MY_ACCOUNT_BUTTON);
+		return PageGeneratorManager.getMyAccountPage(driver);
+	}
 
 }

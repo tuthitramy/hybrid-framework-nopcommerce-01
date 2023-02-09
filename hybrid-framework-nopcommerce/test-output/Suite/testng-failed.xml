@@ -1,28 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]">
-  <test thread-count="5" name="Run on Chrome(failed)">
-    <parameter name="browser" value="chrome"/>
-    <classes>
-      <class name="com.nopcommerce.user.Level_04_Multiple_Browsers">
-        <methods>
-          <include name="Register_04_Existing_Email"/>
-          <include name="beforeClass"/>
-          <include name="afterClass"/>
-        </methods>
-      </class> <!-- com.nopcommerce.user.Level_04_Multiple_Browsers -->
-    </classes>
-  </test> <!-- Run on Chrome(failed) -->
   <test thread-count="5" name="Run on Firefox(failed)">
     <parameter name="browser" value="firefox"/>
     <classes>
-      <class name="com.nopcommerce.user.Level_04_Multiple_Browsers">
+      <class name="com.nopcommerce.user.Level_06_Page_Generator_Manager_My_Account">
         <methods>
-          <include name="Register_01_Empty_Data"/>
-          <include name="beforeClass"/>
           <include name="afterClass"/>
+          <include name="Register_01_Update_Customer_Infor"/>
+          <include name="beforeClass"/>
         </methods>
-      </class> <!-- com.nopcommerce.user.Level_04_Multiple_Browsers -->
+      </class> <!-- com.nopcommerce.user.Level_06_Page_Generator_Manager_My_Account -->
     </classes>
   </test> <!-- Run on Firefox(failed) -->
 </suite> <!-- Failed suite [Suite] -->

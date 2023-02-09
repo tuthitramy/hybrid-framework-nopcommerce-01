@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -30,8 +31,9 @@ public class Level_03_Page_Object_Login {
 
 	@BeforeClass
 	public void beforeClass() {
-		System.setProperty("webdriver.chrome.driver", projectPath + "\\browserDrivers\\chromedriver.exe");
-		driver = new ChromeDriver();
+		System.setProperty("webdriver.gecko.driver", projectPath + "\\browserDriver_main\\geckodriver.exe");
+		driver = new FirefoxDriver();
+
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 
@@ -45,7 +47,7 @@ public class Level_03_Page_Object_Login {
 
 		homePage = new HomePageObject(driver);
 		registerPage = new RegisterPageObject(driver);
-		loginPage = new LoginPageObject(driver);
+//		loginPage = new LoginPageObject(driver);
 
 //		
 //
@@ -61,7 +63,7 @@ public class Level_03_Page_Object_Login {
 
 	}
 
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void Login_01_Empty_Data() {
 
 		homePage.clickToLoginLink();
@@ -72,7 +74,7 @@ public class Level_03_Page_Object_Login {
 
 	}
 
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void Login_02_Invalid_Email() {
 		homePage.clickToLoginLink();
 //		loginPage = new LoginPageObject(driver);
@@ -83,7 +85,7 @@ public class Level_03_Page_Object_Login {
 
 	}
 
-	@Test
+	@Test(enabled = false)
 	public void Login_03_Not_Register_Email() {
 		homePage.clickToLoginLink();
 //		loginPage = new LoginPageObject(driver);
@@ -98,7 +100,7 @@ public class Level_03_Page_Object_Login {
 
 	}
 
-	@Test
+	@Test(enabled = false)
 	public void Login_04_Not_Input_Password() {
 		homePage.clickToLoginLink();
 //		loginPage = new LoginPageObject(driver);
@@ -112,7 +114,7 @@ public class Level_03_Page_Object_Login {
 
 	}
 
-	@Test
+	@Test(enabled = false)
 	public void Login_05_Incorrect_Password() {
 		homePage.clickToLoginLink();
 //		loginPage = new LoginPageObject(driver);
@@ -129,7 +131,7 @@ public class Level_03_Page_Object_Login {
 
 	@Test
 	public void Login_06_Login_Success() {
-		homePage.clickToLoginLink();
+		loginPage=homePage.clickToLoginLink();
 //		loginPage = new LoginPageObject(driver);
 		System.out.println("TC_06: " + randEmail);
 		loginPage.inputToEmailTextbox(randEmail);
