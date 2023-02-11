@@ -16,4 +16,13 @@ public class MyAccountPageUI {
 	public static final String ADDRESS_FIRST_NAME_TEXTBOX = "//input[@id='Address_FirstName']";
 	public static final String ADDRESS_LAST_NAME_TEXTBOX =  "//input[@id='Address_LastName']";
 	public static final String ADDRESS_EMAIL_TEXTBOX = "//input[@id='Address_Email']";
+	public static final String ADDRESS_COMPANY_TEXTBOX = "//input[@id='Address_Company']";
+	public static final String ADDRESS_COUNTRY_TEXTBOX = "//select[@id='Address_CountryId']";
+	public static final String ADDRESS_PROVINCE_TEXTBOX = "//select[@id='Address_StateProvinceId']";
+	public static final String ADDRESS_2_TEXTBOX = "//input[@id='Address_Address2']";
+	public static final String ADDRESS_POSTCODE_TEXTBOX = "//input[@id='Address_ZipPostalCode']";
+	public static final String ADDRESS_CITY_TEXTBOX = "//input[@id='Address_City']";
+	public static final String ADDRESS_PHONE_NUMBER_TEXTBOX = "//input[@id='Address_PhoneNumber']";
+	public static final String ADDRESS_FAX_TEXTBOX = "//input[@id='Address_FaxNumber']";
+	public static final String ADDRESS_01_TEXTBOX = "//input[@id='Address_Address1']";
 }

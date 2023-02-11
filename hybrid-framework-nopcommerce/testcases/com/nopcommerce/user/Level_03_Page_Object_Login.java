@@ -11,16 +11,16 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
-import pageObjects.RegisterPageObject;
+import pageObjects.nopCommerce.user.UserHomePageObject;
+import pageObjects.nopCommerce.user.UserLoginPageObject;
+import pageObjects.nopCommerce.user.UserRegisterPageObject;
 
 public class Level_03_Page_Object_Login {
 	WebDriver driver;
 	String projectPath = System.getProperty("user.dir");
-	private HomePageObject homePage;
-	private LoginPageObject loginPage;
-	private RegisterPageObject registerPage;
+	private UserHomePageObject homePage;
+	private UserLoginPageObject loginPage;
+	private UserRegisterPageObject registerPage;
 	String summaryErrorMessage;
 	String firstName = "Automation_My";
 	String lastName = "FC";
@@ -45,8 +45,8 @@ public class Level_03_Page_Object_Login {
 		rand = new Random();
 		randEmail = "automationfc" + rand.nextInt(100) + "@gmail.com";
 
-		homePage = new HomePageObject(driver);
-		registerPage = new RegisterPageObject(driver);
+		homePage = new UserHomePageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 //		loginPage = new LoginPageObject(driver);
 
 //		

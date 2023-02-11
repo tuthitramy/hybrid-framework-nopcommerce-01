@@ -34,7 +34,7 @@ public class BaseTest {
 
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
-		driver.get("https://demo.nopcommerce.com/");
+		driver.get("https://demo.nopcommerce.com/register?returnUrl=%2F");
 		return driver;
 
 	}

@@ -3,9 +3,9 @@ package com.nopcommerce.user;
 import org.testng.annotations.Test;
 
 import commons.BaseTest;
-import pageObjects.HomePageObject;
-import pageObjects.PageGeneratorManager;
-import pageObjects.RegisterPageObject;
+import commons.PageGeneratorManager;
+import pageObjects.nopCommerce.user.UserHomePageObject;
+import pageObjects.nopCommerce.user.UserRegisterPageObject;
 
 import java.util.Random;
 import org.openqa.selenium.WebDriver;
@@ -18,8 +18,8 @@ import org.testng.annotations.Parameters;
 
 public class Level_07_Switch_Page extends BaseTest {
 	private WebDriver driver;
-	private HomePageObject homePage;
-	private RegisterPageObject registerPage;
+	private UserHomePageObject homePage;
+	private UserRegisterPageObject registerPage;
 	String firstName = "Automation_My";
 	String lastName = "FC";
 	Random rand;
@@ -31,7 +31,7 @@ public class Level_07_Switch_Page extends BaseTest {
 	@BeforeClass
 	public void beforeClass(String browserName) {
 		driver = getBrowserDriver(browserName);
-		homePage = PageGeneratorManager.getHomePage(driver);
+		homePage = PageGeneratorManager.getUserHomePage(driver);
 //		registerPage = PageGeneratorManager.getRegisterPage(driver);
 		rand = new Random();
 		randEmail = "automationfc" + rand.nextInt(100) + "@gmail.com";

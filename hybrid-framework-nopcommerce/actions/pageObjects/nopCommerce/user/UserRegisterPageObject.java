@@ -1,15 +1,16 @@
-package pageObjects;
+package pageObjects.nopCommerce.user;
 
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
+import commons.PageGeneratorManager;
 import pageUIs.HomePageUI;
 import pageUIs.RegisterPageUI;
 
-public class RegisterPageObject extends BasePage {
+public class UserRegisterPageObject extends BasePage {
 	private WebDriver driver;
 
-	public RegisterPageObject(WebDriver driver) {
+	public UserRegisterPageObject(WebDriver driver) {
 		// TODO Auto-generated constructor stub
 		this.driver = driver;
 	}
@@ -101,11 +102,11 @@ public class RegisterPageObject extends BasePage {
 		return getTextElement(driver, RegisterPageUI.EXISTING_MAIL_ERROR_MESSAGE);
 	}
 
-	public MyAccountPageObject clickToMyAccountLink() {
+	public UserMyAccountPageObject clickToMyAccountLink() {
 		// TODO Auto-generated method stub
 		waitForElementClickable(driver, RegisterPageUI.MY_ACCOUNT_BUTTON);
 		clickToElement(driver, RegisterPageUI.MY_ACCOUNT_BUTTON);
-		return PageGeneratorManager.getMyAccountPage(driver);
+		return PageGeneratorManager.getUserMyAccountPage(driver);
 	}
 
 }

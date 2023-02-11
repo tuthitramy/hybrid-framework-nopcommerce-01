@@ -2,8 +2,8 @@ package com.nopcommerce.user;
 
 import org.testng.annotations.Test;
 
-import pageObjects.HomePageObject;
-import pageObjects.RegisterPageObject;
+import pageObjects.nopCommerce.user.UserHomePageObject;
+import pageObjects.nopCommerce.user.UserRegisterPageObject;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -17,8 +17,8 @@ import org.testng.annotations.BeforeClass;
 public class Level_03_Page_Object_Register {
 	WebDriver driver;
 	String projectPath = System.getProperty("user.dir");
-	private HomePageObject homePage;
-	private RegisterPageObject registerPage;
+	private UserHomePageObject homePage;
+	private UserRegisterPageObject registerPage;
 	String firstName = "Automation_My";
 	String lastName = "FC";
 	Random rand;
@@ -31,8 +31,8 @@ public class Level_03_Page_Object_Register {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.get("https://demo.nopcommerce.com/");
-		homePage = new HomePageObject(driver);
-		registerPage = new RegisterPageObject(driver);
+		homePage = new UserHomePageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 		rand = new Random();
 		randEmail = "automationfc" + rand.nextInt(100) + "@gmail.com";
 		password = "123456";

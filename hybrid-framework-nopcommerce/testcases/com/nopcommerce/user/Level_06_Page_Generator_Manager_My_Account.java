@@ -3,11 +3,11 @@ package com.nopcommerce.user;
 import org.testng.annotations.Test;
 
 import commons.BaseTest;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
-import pageObjects.MyAccountPageObject;
-import pageObjects.PageGeneratorManager;
-import pageObjects.RegisterPageObject;
+import commons.PageGeneratorManager;
+import pageObjects.nopCommerce.user.UserHomePageObject;
+import pageObjects.nopCommerce.user.UserLoginPageObject;
+import pageObjects.nopCommerce.user.UserMyAccountPageObject;
+import pageObjects.nopCommerce.user.UserRegisterPageObject;
 
 import java.util.Random;
 import org.openqa.selenium.WebDriver;
@@ -20,10 +20,10 @@ import org.testng.annotations.Parameters;
 
 public class Level_06_Page_Generator_Manager_My_Account extends BaseTest {
 	private WebDriver driver;
-	private HomePageObject homePage;
-	private RegisterPageObject registerPage;
-	private LoginPageObject loginPage;
-	private MyAccountPageObject myAccountPage;
+	private UserHomePageObject homePage;
+	private UserRegisterPageObject registerPage;
+	private UserLoginPageObject loginPage;
+	private UserMyAccountPageObject myAccountPage;
 	String firstName = "Automation_My";
 	String lastName = "FC";
 	Random rand;
@@ -35,7 +35,7 @@ public class Level_06_Page_Generator_Manager_My_Account extends BaseTest {
 	@BeforeClass
 	public void beforeClass(String browserName) {
 		driver = getBrowserDriver(browserName);
-		homePage = PageGeneratorManager.getHomePage(driver);
+		homePage = PageGeneratorManager.getUserHomePage(driver);
 		registerPage = homePage.clickToRegisterLink();
 		rand = new Random();
 		randEmail = "automationfc" + rand.nextInt(10000) + "@gmail.com";
@@ -81,6 +81,15 @@ public class Level_06_Page_Generator_Manager_My_Account extends BaseTest {
 		myAccountPage.inputAddressFirstNameTextbox(firstName);
 		myAccountPage.inputAddressLastNameTextbox(lastName);
 		myAccountPage.inputAddressEmailTextbox(randEmail);
+		myAccountPage.inputAddressCompanyTextbox("OMIOMI001");
+		myAccountPage.selectCountryDropdown("United States");
+		myAccountPage.selectStateProvince("Alaska");
+		myAccountPage.inputAddressCityTextbox("New York");
+		myAccountPage.inputAddress1Textbox("aaaa");
+		myAccountPage.inputAddress2Textbox("bbbbbb");
+		myAccountPage.inputAddressZipPostcodeTextbox("1234343");
+		myAccountPage.inputAddressPhoneNumberTextbox("09434328");
+		myAccountPage.inputAddressFaxTextbox("123132545");
 		
 		
 		

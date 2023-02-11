@@ -1,4 +1,4 @@
-package pageObjects;
+package pageObjects.nopCommerce.user;
 
 import org.openqa.selenium.WebDriver;
 
@@ -6,10 +6,10 @@ import commons.BasePage;
 import pageUIs.LoginPageUI;
 import pageUIs.MyAccountPageUI;
 
-public class MyAccountPageObject extends BasePage {
+public class UserMyAccountPageObject extends BasePage {
 	private WebDriver driver;
 
-	public MyAccountPageObject(WebDriver driver) {
+	public UserMyAccountPageObject(WebDriver driver) {
 		// TODO Auto-generated constructor stub
 		this.driver = driver;
 	}
@@ -114,6 +114,69 @@ public class MyAccountPageObject extends BasePage {
 		// TODO Auto-generated method stub
 		waitForElementVisible(driver,MyAccountPageUI.ADDRESS_EMAIL_TEXTBOX);
 		sendkeysToElement(driver,MyAccountPageUI.ADDRESS_EMAIL_TEXTBOX, string);
+		
+	}
+
+	public void inputAddressCompanyTextbox(String string) {
+		// TODO Auto-generated method stub
+		waitForElementVisible(driver,MyAccountPageUI.ADDRESS_COMPANY_TEXTBOX);
+		sendkeysToElement(driver,MyAccountPageUI.ADDRESS_COMPANY_TEXTBOX, string);
+		
+	}
+
+	public void selectCountryDropdown(String string) {
+		// TODO Auto-generated method stub
+		waitForElementVisible(driver,MyAccountPageUI.ADDRESS_COUNTRY_TEXTBOX);
+		sendkeysToElement(driver,MyAccountPageUI.ADDRESS_COUNTRY_TEXTBOX, string);
+		
+	}
+
+	public void selectStateProvince(String string) {
+		// TODO Auto-generated method stub
+		waitForElementVisible(driver,MyAccountPageUI.ADDRESS_PROVINCE_TEXTBOX);
+		sendkeysToElement(driver,MyAccountPageUI.ADDRESS_PROVINCE_TEXTBOX, string);
+		
+	}
+
+	public void inputAddress2Textbox(String string) {
+		// TODO Auto-generated method stub
+		waitForElementVisible(driver,MyAccountPageUI.ADDRESS_2_TEXTBOX);
+		sendkeysToElement(driver,MyAccountPageUI.ADDRESS_EMAIL_TEXTBOX, string);
+		
+	}
+
+	public void inputAddressZipPostcodeTextbox(String string) {
+		// TODO Auto-generated method stub
+		waitForElementVisible(driver,MyAccountPageUI.ADDRESS_POSTCODE_TEXTBOX);
+		sendkeysToElement(driver,MyAccountPageUI.ADDRESS_POSTCODE_TEXTBOX, string);
+		
+	}
+
+	public void inputAddressCityTextbox(String string) {
+		// TODO Auto-generated method stub
+		waitForElementVisible(driver,MyAccountPageUI.ADDRESS_CITY_TEXTBOX);
+		sendkeysToElement(driver,MyAccountPageUI.ADDRESS_CITY_TEXTBOX, string);
+		
+	}
+
+	public void inputAddressPhoneNumberTextbox(String string) {
+		// TODO Auto-generated method stub
+		waitForElementVisible(driver,MyAccountPageUI.ADDRESS_PHONE_NUMBER_TEXTBOX);
+		sendkeysToElement(driver,MyAccountPageUI.ADDRESS_PHONE_NUMBER_TEXTBOX, string);
+		
+	}
+
+	public void inputAddressFaxTextbox(String string) {
+		// TODO Auto-generated method stub
+		waitForElementVisible(driver,MyAccountPageUI.ADDRESS_FAX_TEXTBOX);
+		sendkeysToElement(driver,MyAccountPageUI.ADDRESS_FAX_TEXTBOX, string);
+		
+	}
+
+	public void inputAddress1Textbox(String string) {
+		// TODO Auto-generated method stub
+		waitForElementVisible(driver,MyAccountPageUI.ADDRESS_01_TEXTBOX);
+		sendkeysToElement(driver,MyAccountPageUI.ADDRESS_01_TEXTBOX, string);
 		
 	}
 }

@@ -3,8 +3,8 @@ package com.nopcommerce.user;
 import org.testng.annotations.Test;
 
 import commons.BaseTest;
-import pageObjects.HomePageObject;
-import pageObjects.RegisterPageObject;
+import pageObjects.nopCommerce.user.UserHomePageObject;
+import pageObjects.nopCommerce.user.UserRegisterPageObject;
 
 import java.util.Random;
 import org.openqa.selenium.WebDriver;
@@ -16,8 +16,8 @@ import org.testng.annotations.Parameters;
 
 public class Level_04_Multiple_Browsers extends BaseTest {
 	private WebDriver driver;
-	private HomePageObject homePage;
-	private RegisterPageObject registerPage;
+	private UserHomePageObject homePage;
+	private UserRegisterPageObject registerPage;
 	String firstName = "Automation_My";
 	String lastName = "FC";
 	Random rand;
@@ -29,8 +29,8 @@ public class Level_04_Multiple_Browsers extends BaseTest {
 	@BeforeClass
 	public void beforeClass(String browserName) {
 		driver = getBrowserDriver(browserName);
-		homePage = new HomePageObject(driver);
-		registerPage = new RegisterPageObject(driver);
+		homePage = new UserHomePageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 		rand = new Random();
 		randEmail = "automationfc" + rand.nextInt(100) + "@gmail.com";
 		password = "123456";
