@@ -3,8 +3,10 @@ package pageObjects.nopCommerce.user;
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
-import pageUIs.LoginPageUI;
-import pageUIs.MyAccountPageUI;
+import commons.PageGeneratorManager;
+import pageUIs.nopCommerce.user.HomePageUI;
+import pageUIs.nopCommerce.user.LoginPageUI;
+import pageUIs.nopCommerce.user.MyAccountPageUI;
 
 public class UserMyAccountPageObject extends BasePage {
 	private WebDriver driver;
@@ -37,21 +39,21 @@ public class UserMyAccountPageObject extends BasePage {
 	public void inputToBirthDayDropdown(String value) {
 		// TODO Auto-generated method stub
 		waitForElementVisible(driver, MyAccountPageUI.BIRTHDAY_DROPDOWN);
-		selectItemInDefaultDropdown(driver, MyAccountPageUI.BIRTHDAY_DROPDOWN, value);
+		selectItemByValueInDefaultDropdown(driver, MyAccountPageUI.BIRTHDAY_DROPDOWN, value);
 
 	}
 
 	public void inputToBirthMonthDropdown(String value) {
 		// TODO Auto-generated method stub
 		waitForElementVisible(driver, MyAccountPageUI.BIRTHMONTH_DROPDOWN);
-		selectItemInDefaultDropdown(driver, MyAccountPageUI.BIRTHMONTH_DROPDOWN, value);
+		selectItemByValueInDefaultDropdown(driver, MyAccountPageUI.BIRTHMONTH_DROPDOWN, value);
 
 	}
 
 	public void inputToBirthYearDropdown(String value) {
 		// TODO Auto-generated method stub
 		waitForElementVisible(driver, MyAccountPageUI.BIRTHYEAR_DROPDOWN);
-		selectItemInDefaultDropdown(driver, MyAccountPageUI.BIRTHYEAR_DROPDOWN, value);
+		selectItemByValueInDefaultDropdown(driver, MyAccountPageUI.BIRTHYEAR_DROPDOWN, value);
 
 	}
 
@@ -69,17 +71,23 @@ public class UserMyAccountPageObject extends BasePage {
 
 	}
 
-	public void clickToSaveButton() {
+	public void clickToCustomerInforSaveButton() {
 		// TODO Auto-generated method stub
-		waitForElementVisible(driver, MyAccountPageUI.SAVE_BUTTON);
-		clickToElement(driver, MyAccountPageUI.SAVE_BUTTON);
+		waitForElementVisible(driver, MyAccountPageUI.CUSTOMER_INFOR_SAVE_BUTTON);
+		clickToElement(driver, MyAccountPageUI.CUSTOMER_INFOR_SAVE_BUTTON);
+
+	}
+	public void clickToAddressSaveButton() {
+		// TODO Auto-generated method stub
+		waitForElementVisible(driver, MyAccountPageUI.ADDRESS_SAVE_BUTTON);
+		clickToElement(driver, MyAccountPageUI.ADDRESS_SAVE_BUTTON);
 
 	}
 
-	public String getInforUpdateMessage() {
+	public String getUpdateMessage() {
 		// TODO Auto-generated method stub
-		waitForElementVisible(driver, LoginPageUI.CUSTOMER_INFOR_UPDATE_MESSAGE);
-		return getTextElement(driver, LoginPageUI.CUSTOMER_INFOR_UPDATE_MESSAGE);
+		waitForElementVisible(driver, MyAccountPageUI.UPDATE_MESSAGE);
+		return getTextElement(driver, MyAccountPageUI.UPDATE_MESSAGE);
 	}
 
 	public void clickToAddressesLink() {
@@ -126,22 +134,22 @@ public class UserMyAccountPageObject extends BasePage {
 
 	public void selectCountryDropdown(String string) {
 		// TODO Auto-generated method stub
-		waitForElementVisible(driver,MyAccountPageUI.ADDRESS_COUNTRY_TEXTBOX);
-		sendkeysToElement(driver,MyAccountPageUI.ADDRESS_COUNTRY_TEXTBOX, string);
+		waitForElementVisible(driver,MyAccountPageUI.ADDRESS_COUNTRY_DROPDOWN);
+		selectItemByValueInDefaultDropdown(driver, MyAccountPageUI.ADDRESS_COUNTRY_DROPDOWN, string);
 		
 	}
 
 	public void selectStateProvince(String string) {
 		// TODO Auto-generated method stub
-		waitForElementVisible(driver,MyAccountPageUI.ADDRESS_PROVINCE_TEXTBOX);
-		sendkeysToElement(driver,MyAccountPageUI.ADDRESS_PROVINCE_TEXTBOX, string);
+		waitForElementVisible(driver,MyAccountPageUI.ADDRESS_PROVINCE_DROPDOWN);
+		selectItemByValueInDefaultDropdown(driver, MyAccountPageUI.ADDRESS_PROVINCE_DROPDOWN, string);
 		
 	}
 
 	public void inputAddress2Textbox(String string) {
 		// TODO Auto-generated method stub
 		waitForElementVisible(driver,MyAccountPageUI.ADDRESS_2_TEXTBOX);
-		sendkeysToElement(driver,MyAccountPageUI.ADDRESS_EMAIL_TEXTBOX, string);
+		sendkeysToElement(driver,MyAccountPageUI.ADDRESS_2_TEXTBOX, string);
 		
 	}
 
@@ -179,4 +187,46 @@ public class UserMyAccountPageObject extends BasePage {
 		sendkeysToElement(driver,MyAccountPageUI.ADDRESS_01_TEXTBOX, string);
 		
 	}
+	public void clickToChangePWLink() {
+		// TODO Auto-generated method stub
+		waitForElementVisible(driver, MyAccountPageUI.CHANGE_PASSWORD_LINK);
+		clickToElement(driver, MyAccountPageUI.CHANGE_PASSWORD_LINK);
+		
+	}
+	public void inputToOldPasswordTextbox(String string) {
+		// TODO Auto-generated method stub
+		waitForElementVisible(driver,MyAccountPageUI.OLD_PASSWORD_TEXTBOX);
+		sendkeysToElement(driver,MyAccountPageUI.OLD_PASSWORD_TEXTBOX, string);
+		
+	}
+	public void inputToNewPasswordTextbox(String string) {
+		// TODO Auto-generated method stub
+		waitForElementVisible(driver,MyAccountPageUI.NEW_PASSWORD_TEXTBOX);
+		sendkeysToElement(driver,MyAccountPageUI.NEW_PASSWORD_TEXTBOX, string);
+		
+	}
+	public void inputToConfirmPasswordTextbox(String string) {
+		// TODO Auto-generated method stub
+		waitForElementVisible(driver,MyAccountPageUI.CONFIRM_PASSWORD_TEXTBOX);
+		sendkeysToElement(driver,MyAccountPageUI.CONFIRM_PASSWORD_TEXTBOX, string);
+		
+	}
+
+	public void ClickToChangePasswordButton() {
+		// TODO Auto-generated method stub
+		waitForElementVisible(driver,MyAccountPageUI.CHANGE_PASSWORD_BUTTON);
+		clickToElement(driver,MyAccountPageUI.CHANGE_PASSWORD_BUTTON);
+		
+		
+	}
+	public UserHomePageObject ClickTologOutLink() {
+		// TODO Auto-generated method stub
+		waitForElementVisible(driver,MyAccountPageUI.LOGOUT_LINK);
+		clickToElement(driver,MyAccountPageUI.LOGOUT_LINK);
+		return PageGeneratorManager.getUserHomePage(driver);
+		
+		
+	}
+	
+	
 }

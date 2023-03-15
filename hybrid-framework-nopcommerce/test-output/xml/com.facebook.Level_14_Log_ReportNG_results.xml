@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Run on Chrome"
+           tests="3"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="37.893">
+  <properties />
+  
+  
+            <testcase name="TC_02_Verify_Element_Undisplayed_In_DOM" time="6.342" classname="com.facebook.Level_14_Log_ReportNG" />
+                <testcase name="TC_03_Verify_Element_Undisplayed_Not_In_DOM" time="8.162" classname="com.facebook.Level_14_Log_ReportNG" />
+                <testcase name="TC_01_Verify_Element_DisPlayed" time="23.389" classname="com.facebook.Level_14_Log_ReportNG" />
+      
+</testsuite>

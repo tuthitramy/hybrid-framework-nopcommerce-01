@@ -1,11 +1,14 @@
 package pageObjects.nopCommerce.user;
 
+import java.util.Random;
+
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 
 import commons.BasePage;
 import commons.PageGeneratorManager;
-import pageUIs.HomePageUI;
-import pageUIs.RegisterPageUI;
+import pageUIs.nopCommerce.user.HomePageUI;
+import pageUIs.nopCommerce.user.RegisterPageUI;
 
 public class UserRegisterPageObject extends BasePage {
 	private WebDriver driver;
@@ -107,6 +110,16 @@ public class UserRegisterPageObject extends BasePage {
 		waitForElementClickable(driver, RegisterPageUI.MY_ACCOUNT_BUTTON);
 		clickToElement(driver, RegisterPageUI.MY_ACCOUNT_BUTTON);
 		return PageGeneratorManager.getUserMyAccountPage(driver);
+	}
+	public void registerNewUser(String firstName, String lastName,String randName,String password) {
+		openPageAtHeaderLinkByName(driver, "Register");	
+		inputToFirstNameTextbox(firstName);
+		inputToLastNameTextbox(lastName);
+		inputToEmailTextbox(randName);
+		inputToPasswordTextbox(password);
+		inputToConfirmPasswordTextbox(password);
+		clickToRegisterButton();
+
 	}
 
 }

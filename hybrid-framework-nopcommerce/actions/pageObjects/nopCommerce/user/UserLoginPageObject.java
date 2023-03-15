@@ -3,22 +3,24 @@ package pageObjects.nopCommerce.user;
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
-import pageUIs.HomePageUI;
-import pageUIs.LoginPageUI;
+import commons.PageGeneratorManager;
+import pageUIs.nopCommerce.user.HomePageUI;
+import pageUIs.nopCommerce.user.LoginPageUI;
 
 public class UserLoginPageObject extends BasePage {
 
 	private WebDriver driver;
 
 	public UserLoginPageObject(WebDriver driver) {
-		// TODO Auto-generated constructor stub
+		// TODO Auto-generated construcr stub
 		this.driver = driver;
 	}
 
-	public void clickToLoginButton() {
+	public UserHomePageObject clickToLoginButton() {
 		// TODO Auto-generated method stub
 		waitForElementClickable(driver, LoginPageUI.LOGIN_BUTTON);
 		clickToElement(driver, LoginPageUI.LOGIN_BUTTON);
+		return PageGeneratorManager.getUserHomePage(driver);
 
 	}
 
@@ -47,10 +49,10 @@ public class UserLoginPageObject extends BasePage {
 		waitForElementVisible(driver, LoginPageUI.SUMMARY_ERROR_MESSAGE);
 		return getTextElement(driver, LoginPageUI.SUMMARY_ERROR_MESSAGE);
 	}
-
-	public boolean isLoginSucess() {
-		// TODO Auto-generated method stub
-		return isElementDisplayed(driver, HomePageUI.LOGOUT_LINK);
+	public UserHomePageObject loginAsUser(String email, String password) {
+		inputToEmailTextbox(email);
+		inputToPasswordTextbox(password);
+		return clickToLoginButton();
 	}
 
 }

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" name="jQuery">
+  <parameter name ="url" value="http://live.techpanda.org/index.php/backendlogin/customer/index/key/270b6b2d3b8df3670c85e6f2761edbe0/"/>
+  
+  <test name="Run on Chrome">
+  <parameter name ="browser" value="chrome"/>
+    <classes>
+      <class name="com.live.techpanda.datatable.Level_12_DataTable_LiveTechPanda"/>
+    </classes>
+  </test> <!-- Test -->
+
+</suite> <!-- Suite -->
